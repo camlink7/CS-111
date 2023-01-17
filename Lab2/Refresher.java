@@ -210,7 +210,19 @@ public class Refresher {
 		return array;
 	}
 
+	/*
+	 * Method Name: printOdd
+	 * Purpose: Print out (using System.out.print()) all odd integers in a given array of integers 
+	 * Parameters:
+	 * -array: Array of integers in which odd integers will be printed from
+	 * Preconditions: N/A
+	 * Postconditions: Does not return. Prints out odd integers using System.out.print()
+	 * Exceptions: N/A
+	 */
 	public static void printOdd(int[] array) {
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] % 2 != 0) { System.out.print(array[i]); }
+		}
 	}
 
 	public static String reverseString(String line) {
