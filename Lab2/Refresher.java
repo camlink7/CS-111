@@ -149,8 +149,25 @@ public class Refresher {
 		return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
 	}
 
+	/*
+	 * Method Name: getWeather
+	 * Purpose: Determines a String describing the weather based on if its raining and the temperature in Fahrenheit
+	 * Parameters:
+	 * -rain: Boolean representing whether it is raining or not
+	 * -temperature: The temperature in Fahrenheit
+	 * Preconditions: N/A
+	 * Postconditions: Will return...
+	 * -"Snowy" if raining and <30 degrees
+	 * -"Rainy" if raining and >=30 degrees
+	 * -"Chilly" if not raining and <30 degrees
+	 * -"Sunny" if not raining and >=30 degrees
+	 * Exceptions: N/A
+	 */
 	public static String getWeather(boolean rain, int temperature) {
-		return "";
+		if (rain && temperature < 30) { return "Snowy"; }
+		else if (rain && temperature >= 30) { return "Rainy"; }
+		else if (!rain && temperature < 30) { return "Chilly"; }
+		else { return "Sunny"; }
 	}
 
 	public static boolean containsChar(String line, char x) {
