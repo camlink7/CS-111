@@ -170,8 +170,19 @@ public class Refresher {
 		else { return "Sunny"; }
 	}
 
+	/*
+	 * Method Name: containsChar
+	 * Purpose: Determines whether a specified char is in a given string
+	 * Parameters:
+	 * -line: The given string to search through
+	 * -x: The specified char to look for in the string
+	 * Preconditions: N/A
+	 * Postconditions: Returns true if the char is found in the string, Returns false if the char is not found
+	 * Exceptions: N/A
+	 */
 	public static boolean containsChar(String line, char x) {
-		return false;
+		//If the indexOf 'x' is -1, its not in the String. Anything else, it must be in the String
+		return line.indexOf(x) != -1;
 	}
 
 	public static int[][] fillArray(int[][] array) {
