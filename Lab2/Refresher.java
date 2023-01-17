@@ -1,3 +1,4 @@
+package Lab2;
 public class Refresher {
 	public static String swapHalves(String line) {
 		int middleIndex = line.length() / 2;
@@ -23,8 +24,9 @@ public class Refresher {
 		int maxValue = Integer.MIN_VALUE;
 		int maxIndex = 0;
 		for (int i = 0; i < array.length; i++) {
-			if (maxValue )
+			//
 		}
+		return 0;
 	}
 
 	public static boolean isPalindrome(String line) {
