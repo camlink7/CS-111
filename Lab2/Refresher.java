@@ -93,8 +93,22 @@ public class Refresher {
 		return (line.equals(new StringBuilder(line).reverse().toString()));
 	}
 
+	/*
+	 * Method Name: factorial
+	 * Purpose: Calculates the factorial value of a given integer
+	 * Parameters:
+	 * -n: The base integer given
+	 * Preconditions: N/A
+	 * Postconditions: Returns the factorial integer of the int given
+	 * Exceptions: N/A
+	 */
 	public static int factorial(int n) {
-		return 0;
+		//Loop through n number of times and multiply the product each time
+		int product = 1;
+		for (int i = 1; i <= n; i++) {
+			product *= i;
+		}
+		return product;
 	}
 
 	public static int[] getFibonacci(int n) {
