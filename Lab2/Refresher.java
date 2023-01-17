@@ -78,16 +78,19 @@ public class Refresher {
 	}
 
 	/*
-	 * Method Name: getMax
-	 * Purpose: Finds the greatest (maximum) value in a given array of integers
+	 * Method Name: isPalindrome
+	 * Purpose: Check if a given string is the read the same backwards as it is forwards
 	 * Parameters:
-	 * -array: The given array to search for the max value in
-	 * Preconditions: N/A
-	 * Postconditions: Returns the greatest (maximum) value in the array
+	 * -line: The given string to check if it is a Palindrome
+	 * Preconditions: Given string shouldn't contain whitespace
+	 * Postconditions: 
+	 * -Returns True -> String is a Palindrome
+	 * -Returns False -> String is not a Palindrome
 	 * Exceptions: N/A
 	 */
 	public static boolean isPalindrome(String line) {
-		return false;
+		//Use the Java StringBuilder Object to avoid using a reverse for loop
+		return (line.equals(new StringBuilder(line).reverse().toString()));
 	}
 
 	public static int factorial(int n) {
