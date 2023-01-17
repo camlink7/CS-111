@@ -1,14 +1,30 @@
 public class Refresher {
 	public static String swapHalves(String line) {
-		return "   ";
+		int middleIndex = line.length() / 2;
+		if (line.length() % 2 != 0) {
+			middleIndex++;
+		}
+		return line.substring(middleIndex, line.length()) + line.substring(0, middleIndex);
 	}
 
 	public static int countVowels(String line) {
-		return 0;
+		String lowercaseLine = line.toLowerCase();
+		final String VOWELS = "aeiou";
+		int count = 0;
+		for (int i = 0; i < lowercaseLine.length(); i++) {
+			if (VOWELS.indexOf(lowercaseLine.charAt(i)) != -1) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	public static int getMax(int[] array) {
-		return 0;
+		int maxValue = Integer.MIN_VALUE;
+		int maxIndex = 0;
+		for (int i = 0; i < array.length; i++) {
+			if (maxValue )
+		}
 	}
 
 	public static boolean isPalindrome(String line) {
