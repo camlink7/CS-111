@@ -7,6 +7,8 @@
 
 package Lab2;
 
+import java.util.Arrays;
+
 /*
  * Class Name: Refresher
  * Purpose: Stores all the methods Lab 2 requires. Methods are simple implementations of "refresher" content from previous CS courses.
@@ -111,12 +113,40 @@ public class Refresher {
 		return product;
 	}
 
+	/*
+	 * Method Name: getFibonacci
+	 * Purpose: Calculates the Fibonacci sequence to the n-th number deep
+	 * Parameters:
+	 * -n: The depth of the Fibonacci sequence
+	 * Preconditions: N/A
+	 * Postconditions: Returns an array representing the Fibonacci sequence to the n-th number deep
+	 * Exceptions: N/A
+	 */
 	public static int[] getFibonacci(int n) {
-		return new int[n];
+		//Create array the size of n with the first elem = 0, second elem = 1
+		int[] array = {0, 1};
+		array = Arrays.copyOf(array, n);
+		
+		//Move through the rest of the array setting the current index to the sum of the two previous indexes
+		for (int i = 2; i < n; i++) {
+			array[i] = array[i - 2] + array[i - 1];
+		}
+		return array;
 	}
 
+	
+	/*
+	 * Method Name: getC
+	 * Purpose: Calculates the value of 'c' from the Pythogorean Theorem given side lengths 'a' and 'b'
+	 * Parameters:
+	 * -a: Side length 'a' value represented in the Pythogorean Theorem
+	 * -b: Side length 'b' value represented in the Pythogorean Theorem
+	 * Preconditions: N/A
+	 * Postconditions: Returns the length of the hypotenuse, otherwise known as 'c' in the Pythogorean Theorem 
+	 * Exceptions: N/A
+	 */
 	public static double getC(int a, int b) {
-		return 0.0;
+		return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
 	}
 
 	public static String getWeather(boolean rain, int temperature) {
