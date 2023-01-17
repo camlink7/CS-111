@@ -81,7 +81,7 @@ public class Refresher {
 
 	/*
 	 * Method Name: isPalindrome
-	 * Purpose: Check if a given string is the read the same backwards as it is forwards
+	 * Purpose: Check if a given string is the same backwards as it is forwards
 	 * Parameters:
 	 * -line: The given string to check if it is a Palindrome
 	 * Preconditions: Given string shouldn't contain whitespace
@@ -185,7 +185,28 @@ public class Refresher {
 		return line.indexOf(x) != -1;
 	}
 
+	/*
+	 * Method Name: fillArray
+	 * Purpose: Converts an existing 2D array to have all elements of odd rows = 0 and all elements of even rows = 1
+	 * Parameters:
+	 * -array: Existing 2D array to be converted
+	 * Preconditions: N/A
+	 * Postconditions: Returns a 2D array with odd row element's = 0 and even row element's = 1
+	 * Exceptions: N/A
+	 */
 	public static int[][] fillArray(int[][] array) {
+		for (int row = 0; row < array.length; row++) {
+			for (int col = 0; col < array[row].length; col++) {
+				//Even row, set to 1
+				if (row % 2 == 0) {
+					array[row][col] = 1;
+				}
+				//Odd row, set to 0
+				else {
+					array[row][col] = 0;
+				}
+			}
+		}
 		return array;
 	}
 
