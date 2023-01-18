@@ -274,14 +274,22 @@ public class Refresher {
 	
 	/*
 	 * Method Name: rotateArray
-	 * Purpose: 
+	 * Purpose: Shifts all elements up an index in the array with the last index moving to the front of the new Array; 
+	 * 			Otherwise known as "rotating" the array
 	 * Parameters:
-	 * -number: The integer given to have its digits reversed
-	 * Preconditions: number must be a base-10 integer
-	 * Postconditions: Returns a integer representing the reversed version of the given number
+	 * -array: The given array to be "rotated"
+	 * Preconditions: The given array must have a length of at least 2
+	 * Postconditions: Returns a new array with each element shifted up an index and the last element moving to the front
 	 * Exceptions: N/A
 	 */
-	public static int[] rotateArray(int[] array) {
+	public static int[] rotateArray(int[] array) {	
+		//Move backwards through the array swapping each value to result in a shift of each element up
+		//while moving the last element to the front of the array
+		for (int i = array.length - 1; i > 0; i--) {
+			int temp = array[i];
+			array[i] = array[i - 1];
+			array[i - 1] = temp;
+		}
 		return array;
 	}
 }
