@@ -238,8 +238,22 @@ public class Refresher {
 		//Use Java's built-in StringBuilder to avoid using a reverse for loop
 		return new StringBuilder(line).reverse().toString();
 	}
-
+	
+	/*
+	 * Method Name: swap
+	 * Purpose: To swap two existing values in a given array
+	 * Parameters:
+	 * -array: The array containing the two values
+	 * Preconditions: The array's length must be great enough to contain both given indexes to be swapped
+	 * Postconditions: Returns the modified array with the values at the given indexes swapped
+	 * Exceptions: N/A
+	 */
 	public static int[] swap(int[] array, int index1, int index2) {
+		//Store the first index value in a temp variable so its not lost when replaced
+		int temp = array[index1];
+		
+		array[index1] = array[index2];
+		array[index2] = temp;
 		return array;
 	}
 
