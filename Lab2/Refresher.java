@@ -216,7 +216,7 @@ public class Refresher {
 	 * Parameters:
 	 * -array: Array of integers in which odd integers will be printed from
 	 * Preconditions: N/A
-	 * Postconditions: Does not return. Prints out odd integers using System.out.print()
+	 * Postconditions: Does not return anything. Prints out odd integers using System.out.print()
 	 * Exceptions: N/A
 	 */
 	public static void printOdd(int[] array) {
