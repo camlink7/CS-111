@@ -257,10 +257,30 @@ public class Refresher {
 		return array;
 	}
 
+	/*
+	 * Method Name: reverseInt
+	 * Purpose: Reverses the order of digits in a given base-10 integer
+	 * Parameters:
+	 * -number: The integer given to have its digits reversed
+	 * Preconditions: number must be a base-10 integer
+	 * Postconditions: Returns a integer representing the reversed version of the given number
+	 * Exceptions: N/A
+	 */
 	public static int reverseInt(int number) {
-		return 0;
+		//To avoid overcomplicated Mathematical calculations, convert number to a String, reverse the order,
+		//and then convert it back to an Integer
+		return Integer.valueOf(new StringBuilder(Integer.toString(number)).reverse().toString());
 	}
-
+	
+	/*
+	 * Method Name: rotateArray
+	 * Purpose: 
+	 * Parameters:
+	 * -number: The integer given to have its digits reversed
+	 * Preconditions: number must be a base-10 integer
+	 * Postconditions: Returns a integer representing the reversed version of the given number
+	 * Exceptions: N/A
+	 */
 	public static int[] rotateArray(int[] array) {
 		return array;
 	}
