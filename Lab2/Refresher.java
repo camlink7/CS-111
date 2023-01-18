@@ -225,8 +225,18 @@ public class Refresher {
 		}
 	}
 
+	/*
+	 * Method Name: reverseString
+	 * Purpose: To reverse a given string so that it is "backwards"
+	 * Parameters:
+	 * -line: The given String to be reversed
+	 * Preconditions: N/A
+	 * Postconditions: Returns a new String that is a reversed version of the given String
+	 * Exceptions: N/A
+	 */
 	public static String reverseString(String line) {
-		return "";
+		//Use Java's built-in StringBuilder to avoid using a reverse for loop
+		return new StringBuilder(line).reverse().toString();
 	}
 
 	public static int[] swap(int[] array, int index1, int index2) {
