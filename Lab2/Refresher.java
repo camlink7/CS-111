@@ -6,7 +6,6 @@
 */
 
 package Lab2;
-
 import java.util.Arrays;
 
 /*
@@ -15,10 +14,9 @@ import java.util.Arrays;
  * Exceptions: N/A
  */
 public class Refresher {
-	
 	/*
 	 * Method Name: swapHalves
-	 * Purpose: Splits a given string in half and returns a new String with the halves swapped (second half followed by first half)
+	 * Purpose: Splits a give		n string in half and returns a new String with the halves swapped (second half followed by first half)
 	 * Parameters:
 	 * -line: Given string to be swapped
 	 * Preconditions: N/A
