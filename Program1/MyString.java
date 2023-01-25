@@ -1,9 +1,15 @@
 package Program1;
 public class MyString {
+	private char[] text;
+	
 	public MyString(String original) {
 	}
 
 	public MyString(char[] original) {
+		this.text = new char[original.length];
+		for (int i = 0; i < original.length; i++) {
+			this.text[i] = original[i];
+		}
 	}
 
 	public MyString(MyString original) {
@@ -50,7 +56,7 @@ public class MyString {
 	}
 
 	public String toString() {
-		return "";
+		
 	}
 
 	public boolean equals(MyString other) {
