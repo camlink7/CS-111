@@ -1,0 +1,63 @@
+package Program1;
+public class MyString {
+	public MyString(String original) {
+	}
+
+	public MyString(char[] original) {
+	}
+
+	public MyString(MyString original) {
+	}
+
+	public int length() {
+		return 0;
+	}
+
+	public char charAt(int index) {
+		return 'x';
+	}
+
+	public MyString concat(MyString otherString) {
+		return this;
+	}
+
+	public int indexOf(char ch) {
+		return 0;
+	}
+
+	public int indexOf(char ch, int fromIndex) {
+		return 0;
+	}
+
+	public MyString replace(char target, char replacement) {
+		return this;
+	}
+
+	public MyString substring(int beginIndex) {
+		return this;
+	}
+
+	public MyString substring(int beginIndex, int endIndex) {
+		return this;
+	}
+
+	public MyString toUpperCase() {
+		return this;
+	}
+
+	public MyString toLowerCase() {
+		return this;
+	}
+
+	public String toString() {
+		return "";
+	}
+
+	public boolean equals(MyString other) {
+		return false;
+	}
+
+	public int compareTo(MyString anotherString) {
+		return 0;
+	}
+}

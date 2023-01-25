@@ -6,6 +6,7 @@
  * Purpose: This file contains the implementation of the Student class required for Lab 3
  */
 
+package Lab3;
 
 /*
  * Class Name: Student
