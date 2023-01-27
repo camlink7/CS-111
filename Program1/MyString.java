@@ -3,6 +3,7 @@ public class MyString {
 	private char[] text;
 	
 	public MyString(String original) {
+		this.text = original.toCharArray();
 	}
 
 	public MyString(char[] original) {
@@ -13,6 +14,7 @@ public class MyString {
 	}
 
 	public MyString(MyString original) {
+		this.text = original.toString().toCharArray();
 	}
 
 	public int length() {
@@ -56,7 +58,11 @@ public class MyString {
 	}
 
 	public String toString() {
-		
+		String output = "";
+		for (int i = 0; i < text.length; i++) {
+			output += text[i];
+		}
+		return output;
 	}
 
 	public boolean equals(MyString other) {
