@@ -1,4 +1,7 @@
 package Program1;
+
+import java.lang.*;
+
 public class MyString {
 	private char[] text;
 	
@@ -18,35 +21,74 @@ public class MyString {
 	}
 
 	public int length() {
-		return 0;
+		return this.text.length;
 	}
 
 	public char charAt(int index) {
-		return 'x';
+		if (index >= 0 && index < text.length) {
+			return this.text[index];
+		}
+		throw new IndexOutOfBoundsException("Given index does not exist!");
 	}
 
 	public MyString concat(MyString otherString) {
-		return this;
+		return new MyString(this.toString() + otherString.toString());
 	}
 
 	public int indexOf(char ch) {
-		return 0;
+		for (int i = 0; i < this.text.length; i++) {
+			if (this.text[i] == ch) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public int indexOf(char ch, int fromIndex) {
-		return 0;
+		for (int i = fromIndex; i < this.text.length; i++) {
+			if (this.text[i] == ch) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	public MyString replace(char target, char replacement) {
-		return this;
+		char[] newCharArray = this.text.clone();
+		for (int i = 0; i < newCharArray.length; i++) {
+			if (newCharArray[i] == target) {
+				newCharArray[i] = replacement;
+			}
+		}
+		return new MyString(newCharArray);
 	}
 
 	public MyString substring(int beginIndex) {
-		return this;
+		char[] substring = new char[this.text.length - beginIndex];
+		int substringCount = 0;
+		
+		if (beginIndex >= 0 && beginIndex < this.text.length) {
+			for (int i = beginIndex; i < this.text.length; i++) {
+				substring[substringCount] = this.text[i];
+				substringCount++;
+			}
+			return new MyString(substring);
+		}
+		throw new IndexOutOfBoundsException("Given index does not exist!");
 	}
 
 	public MyString substring(int beginIndex, int endIndex) {
-		return this;
+		char[] substring = new char[this.text.length - beginIndex];
+		int substringCount = 0;
+		
+		if (beginIndex >= 0 && beginIndex < this.text.length) {
+			for (int i = beginIndex; i < this.text.length; i++) {
+				substring[substringCount] = this.text[i];
+				substringCount++;
+			}
+			return new MyString(substring);
+		}
+		throw new IndexOutOfBoundsException("Given index does not exist!");
 	}
 
 	public MyString toUpperCase() {
