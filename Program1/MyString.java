@@ -133,20 +133,18 @@ public class MyString {
 	}
 
 	public int compareTo(MyString anotherString) {
-		//Check if objects are equal first
-		if (this.equals(anotherString)) { return 0; }
-		
 		char[] otherCharArray = anotherString.toString().toCharArray();
 		int minLength = Math.min(this.text.length, otherCharArray.length);
+		
+		//Check for a difference in characters based on the Character class numerical comparison
 		for (int i = 0; i < minLength; i++) {
-			if (this.text[i] != otherCharArray[i]) {
-				return this.text[i] - otherCharArray[i];
+			int compare = Character.compare(this.text[i], otherCharArray[i]);
+			if (compare != 0) {
+				return compare;
 			}
 		}
 		
-		if (this.text.length > otherCharArray.length) {
-			return 1;
-		}
-		return -1;
+		//If all characters are the same until the min length is reached, return the difference in length
+		return this.text.length - otherCharArray.length;
 	}
 }
