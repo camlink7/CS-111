@@ -17,6 +17,7 @@ class IntArrayTest {
 	void testGetValue() {
 		int[] arr = { 0, 1, 2, 3, 4, 5 };
 		IntArray ia = new IntArray(arr);
+		int[] test = ia.asArray();
 		for (int i = 0; i < arr.length; i++) {
 			assertEquals(arr[i], ia.getValue(i));
 		}
@@ -69,11 +70,14 @@ class IntArrayTest {
 	@Test
 	void testEqualsIntArray() {
 		int[] arr = { 0, 1, 2, 3, 4, 5 };
+		int[] arr2 = { 0, 1 };
 		IntArray ia1 = new IntArray(arr);
 		IntArray ia2 = new IntArray(arr);
+		IntArray ia3 = new IntArray(arr2);
 		assertTrue(ia1.equals(ia2));
 		ia1.setValue(0, 1);
 		assertFalse(ia1.equals(ia2));
+		assertFalse(ia1.equals(ia3));
 	}
 
 }
