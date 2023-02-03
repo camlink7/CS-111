@@ -92,10 +92,16 @@ public class MyString {
 	}
 
 	public MyString toUpperCase() {
+		for (int i = 0; i < this.text.length; i++) {
+			this.text[i] = Character.toUpperCase(this.text[i]);
+		}
 		return this;
 	}
 
 	public MyString toLowerCase() {
+		for (int i = 0; i < this.text.length; i++) {
+			this.text[i] = Character.toLowerCase(this.text[i]);
+		}
 		return this;
 	}
 
@@ -108,10 +114,37 @@ public class MyString {
 	}
 
 	public boolean equals(MyString other) {
-		return false;
+		//If the 'other' object is null, return false
+		if (other == null) { return false; }
+		
+		char[] otherCharArray = other.toString().toCharArray();
+		//If both objects have the same number of characters
+		if (this.text.length == otherCharArray.length) {
+			for (int i = 0; i < this.text.length; i++) {
+				if (this.text[i] != otherCharArray[i]) {
+					return false;
+				}
+			}
+		}
+		else {
+			return false;
+		}
+		return true;
 	}
 
 	public int compareTo(MyString anotherString) {
-		return 0;
+		char[] otherCharArray = anotherString.toString().toCharArray();
+		int minLength = Math.min(this.text.length, otherCharArray.length);
+		
+		//Check for a difference in characters based on the Character class numerical comparison
+		for (int i = 0; i < minLength; i++) {
+			int compare = Character.compare(this.text[i], otherCharArray[i]);
+			if (compare != 0) {
+				return compare;
+			}
+		}
+		
+		//If all characters are the same until the min length is reached, return the difference in length
+		return this.text.length - otherCharArray.length;
 	}
 }
