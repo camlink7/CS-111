@@ -78,11 +78,11 @@ public class MyString {
 	}
 
 	public MyString substring(int beginIndex, int endIndex) {
-		char[] substring = new char[this.text.length - beginIndex];
+		char[] substring = new char[endIndex - beginIndex];
 		int substringCount = 0;
 		
-		if (beginIndex >= 0 && beginIndex < this.text.length) {
-			for (int i = beginIndex; i < this.text.length; i++) {
+		if (beginIndex >= 0 && beginIndex < this.text.length && endIndex < this.text.length) {
+			for (int i = beginIndex; i < endIndex; i++) {
 				substring[substringCount] = this.text[i];
 				substringCount++;
 			}
