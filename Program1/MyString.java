@@ -93,14 +93,14 @@ public class MyString {
 
 	public MyString toUpperCase() {
 		for (int i = 0; i < this.text.length; i++) {
-			this.text[i] = Character.toUpperCase(this.text[i]);
+			//this.text[i] = Character.toUpperCase(this.text[i]);
 		}
 		return this;
 	}
 
 	public MyString toLowerCase() {
 		for (int i = 0; i < this.text.length; i++) {
-			this.text[i] = Character.toLowerCase(this.text[i]);
+			//this.text[i] = Character.toLowerCase(this.text[i]);
 		}
 		return this;
 	}
