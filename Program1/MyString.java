@@ -1,6 +1,7 @@
 package Program1;
 
 import java.lang.*;
+import java.util.Arrays;
 
 public class MyString {
 	private char[] text;
@@ -92,17 +93,19 @@ public class MyString {
 	}
 
 	public MyString toUpperCase() {
-		for (int i = 0; i < this.text.length; i++) {
-			//this.text[i] = Character.toUpperCase(this.text[i]);
+		char[] chars = Arrays.copyOf(this.text, this.text.length);
+		for (int i = 0; i < chars.length; i++) {
+			chars[i] = Character.toUpperCase(chars[i]);
 		}
-		return this;
+		return new MyString(chars);
 	}
 
 	public MyString toLowerCase() {
-		for (int i = 0; i < this.text.length; i++) {
-			//this.text[i] = Character.toLowerCase(this.text[i]);
+		char[] chars = Arrays.copyOf(this.text, this.text.length);
+		for (int i = 0; i < chars.length; i++) {
+			chars[i] = Character.toLowerCase(chars[i]);
 		}
-		return this;
+		return new MyString(chars);
 	}
 
 	public String toString() {
