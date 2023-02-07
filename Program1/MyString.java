@@ -165,6 +165,16 @@ public class MyString {
 		return new MyString(newCharArray);
 	}
 
+	/*
+	 * Method Name: substring
+	 * Purpose: Gets a 'piece' of the MyString object, or a substring beginning at a given beginIndex until the end of the MyString
+	 * Parameters:
+	 * - beginIndex: The index at which to start the partial character sequence at
+	 * Preconditions: N/A
+	 * Postconditions: Returns a new MyString object that is a portion of the original MyString starting at the given beginIndex
+	 * Exceptions:
+	 * - IndexOutOfBoundsException: Thrown if the given index is not valid (index < 0 || index >= length of this MyString)
+	 */
 	public MyString substring(int beginIndex) {
 		char[] substring = new char[this.text.length - beginIndex];
 		int substringCount = 0;
@@ -179,6 +189,17 @@ public class MyString {
 		throw new IndexOutOfBoundsException("Given index does not exist!");
 	}
 
+	/*
+	 * Method Name: substring
+	 * Purpose: Gets a 'piece' of the MyString object, or a substring starting at the beginIndex until the endIndex given
+	 * Parameters:
+	 * - beginIndex: The index at which to start the partial character sequence at (inclusive)
+	 * - endIndex: The index at which to end the partial character sequence exclusively (endIndex - 1)
+	 * Preconditions: N/A
+	 * Postconditions: Returns a new MyString object that is a substring from beginIndex to endIndex of the original MyString
+	 * Exceptions:
+	 * - IndexOutOfBoundsException: Thrown if the given indexes are not valid (index < 0 || index >= length of this MyString)
+	 */
 	public MyString substring(int beginIndex, int endIndex) {
 		char[] substring = new char[endIndex - beginIndex];
 		int substringCount = 0;
@@ -193,6 +214,14 @@ public class MyString {
 		throw new IndexOutOfBoundsException("Given index does not exist!");
 	}
 
+	/*
+	 * Method Name: toUpperCase
+	 * Purpose: Converts all the characters in the MyString to upper case
+	 * Parameters: N/A
+	 * Preconditions: N/A
+	 * Postconditions: Returns a new MyString object with the same chars at this MyString, but all upper case
+	 * Exceptions: N/A
+	 */
 	public MyString toUpperCase() {
 		char[] chars = Arrays.copyOf(this.text, this.text.length);
 		for (int i = 0; i < chars.length; i++) {
@@ -201,6 +230,14 @@ public class MyString {
 		return new MyString(chars);
 	}
 
+	/*
+	 * Method Name: toLowerCase
+	 * Purpose: Converts all the characters in the MyString to lower case
+	 * Parameters: N/A
+	 * Preconditions: N/A
+	 * Postconditions: Returns a new MyString object with the same chars at this MyString, but all lower case
+	 * Exceptions: N/A
+	 */
 	public MyString toLowerCase() {
 		char[] chars = Arrays.copyOf(this.text, this.text.length);
 		for (int i = 0; i < chars.length; i++) {
@@ -209,6 +246,14 @@ public class MyString {
 		return new MyString(chars);
 	}
 
+	/*
+	 * Method Name: toString
+	 * Purpose: Creates a Java String from the character sequence in this MyString object
+	 * Parameters: N/A
+	 * Preconditions: N/A
+	 * Postconditions: Returns a Java String with the character sequence stored in this MyString Object
+	 * Exceptions: N/A
+	 */
 	public String toString() {
 		String output = "";
 		for (int i = 0; i < text.length; i++) {
@@ -217,6 +262,16 @@ public class MyString {
 		return output;
 	}
 
+	/*
+	 * Method Name: equals
+	 * Purpose: Checks for perfect equality in the character sequence of this MyString object compared to another MyString object
+	 * Parameters: N/A
+	 * Preconditions: N/A
+	 * Postconditions: 
+	 * - Returns true if the two MyStrings are equal in terms of the same character sequence
+	 * - Returns false if they do NOT have the same character sequence
+	 * Exceptions: N/A
+	 */
 	public boolean equals(MyString other) {
 		//If the 'other' object is null, return false
 		if (other == null) { return false; }
@@ -236,6 +291,19 @@ public class MyString {
 		return true;
 	}
 
+	/*
+	 * Method Name: compareTo
+	 * Purpose: Compares this MyString object to another MyString object lexicographically to determine how they compare relative
+	 * to each other
+	 * Parameters:
+	 * - anotherString: The other MyString object to compare this MyString object to
+	 * Preconditions: N/A
+	 * Postconditions: 
+	 * - Returns 0 if the two MyStrings are equal
+	 * - Returns number > 0 if this MyString lexicographically comes BEFORE anotherString
+	 * - Returns number < 0 if this MyString lexicographically comes AFTER anotherString
+	 * Exceptions: N/A
+	 */
 	public int compareTo(MyString anotherString) {
 		char[] otherCharArray = anotherString.toString().toCharArray();
 		int minLength = Math.min(this.text.length, otherCharArray.length);
