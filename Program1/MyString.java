@@ -1,15 +1,45 @@
+/*
+ * Name: Camden Link
+ * Assignment: Program 1
+ * Lab Instructor: Jakob Kaivo
+ * Date: 2023-02-06
+ * Purpose: This file contains the MyString class, a custom implementation that is similar to Java's String class
+ */
 package Program1;
-
 import java.lang.*;
 import java.util.Arrays;
 
+/*
+ * Class Name: MyString
+ * Purpose: The MyString class functions similar to Java's built-in String class, but is a custom implementation as required
+ * for Program 1 Assignment
+ * Exceptions: N/A
+ */
 public class MyString {
 	private char[] text;
 	
+	/*
+	 * Method Name: MyString
+	 * Purpose: Constructs a new MyString object from a Java String
+	 * Parameters:
+	 * - original: The original Java String from which to keep the sequence of characters from
+	 * Preconditions: N/A
+	 * Postconditions: A new MyString object is created containing the character sequence found in the original String
+	 * Exceptions: N/A
+	 */
 	public MyString(String original) {
 		this.text = original.toCharArray();
 	}
 
+	/*
+	 * Method Name: MyString
+	 * Purpose: Constructs a new MyString object from a given array of chars
+	 * Parameters:
+	 * - original: The original array of chars from which to create the new object from
+	 * Preconditions: N/A
+	 * Postconditions: A new MyString object is created containing the character sequence found in the original char array
+	 * Exceptions: N/A
+	 */
 	public MyString(char[] original) {
 		this.text = new char[original.length];
 		for (int i = 0; i < original.length; i++) {
@@ -17,14 +47,43 @@ public class MyString {
 		}
 	}
 
+	/*
+	 * Method Name: MyString
+	 * Purpose: Constructs a new MyString object from another MyString object (copy constructor)
+	 * Parameters:
+	 * - original: The original MyString object 
+	 * Preconditions: N/A
+	 * Postconditions: A new MyString object is created containing the character sequence found in the original MyString object
+	 * Exceptions: N/A
+	 */
 	public MyString(MyString original) {
-		this.text = original.toString().toCharArray();
+		char[] originalCharSequence = original.toString().toCharArray();
+		this.text = Arrays.copyOf(originalCharSequence, originalCharSequence.length);
 	}
 
+	/*
+	 * Method Name: length
+	 * Purpose: Gets the current size of the object
+	 * Parameters: N/A
+	 * Preconditions: N/A
+	 * Postconditions: Returns the current size of the char sequence in the object
+	 * Exceptions: N/A
+	 */
 	public int length() {
 		return this.text.length;
 	}
 
+	/*
+	 * Method Name: charAt
+	 * Purpose: Gets the character at a specified index in the object
+	 * Parameters:
+	 * - index: The index to get the character at
+	 * Preconditions: index must be a valid index
+	 * Postconditions: Returns the character at a specified index in the object
+	 * Exceptions: 
+	 * - IndexOutOfBoundsException: Thrown when the index given does not exist. 
+	 * 	This occurs if index < 0 || index >= the length of the MyString object
+	 */
 	public char charAt(int index) {
 		if (index >= 0 && index < text.length) {
 			return this.text[index];
@@ -32,10 +91,30 @@ public class MyString {
 		throw new IndexOutOfBoundsException("Given index does not exist!");
 	}
 
+	/*
+	 * Method Name: concat
+	 * Purpose: Combines the current MyString with another MyString object creating a single MyString object
+	 * Parameters:
+	 * - otherString: The other MyString object which will be concatenated to the end of this MyString object
+	 * Preconditions: N/A
+	 * Postconditions: Returns a new MyString object with the original char sequence followed by the otherString
+	 * char sequence
+	 * Exceptions: N/A
+	 */
 	public MyString concat(MyString otherString) {
 		return new MyString(this.toString() + otherString.toString());
 	}
 
+	/*
+	 * Method Name: indexOf
+	 * Purpose: Gets the index of the first occurrence of a specified character in this MyString object by searching the ALL chars
+	 * Parameters:
+	 * - ch: The character to search the MyString for
+	 * Preconditions: N/A
+	 * Postconditions: Returns the index of the specified character stored in this MyString object.
+	 * If the character is not found, -1 is returned
+	 * Exceptions: N/A
+	 */
 	public int indexOf(char ch) {
 		for (int i = 0; i < this.text.length; i++) {
 			if (this.text[i] == ch) {
@@ -45,6 +124,18 @@ public class MyString {
 		return -1;
 	}
 
+	/*
+	 * Method Name: indexOf
+	 * Purpose: Gets the index of the first occurrence of a specified character in this MyString object by starting a search ONLY
+	 * at the fromIndex parameter
+	 * Parameters:
+	 * - ch: The character to search MyString for 
+	 * - fromIndex: The index to begin the search at
+	 * Preconditions: N/A
+	 * Postconditions: Returns the index of the specified character stored in this MyString object starting a search at the fromIndex
+	 * param. If the character is not found, -1 is returned
+	 * Exceptions: N/A
+	 */
 	public int indexOf(char ch, int fromIndex) {
 		for (int i = fromIndex; i < this.text.length; i++) {
 			if (this.text[i] == ch) {
@@ -54,6 +145,16 @@ public class MyString {
 		return -1;
 	}
 
+	/*
+	 * Method Name: replace
+	 * Purpose: Replaces all occurrences of the target character with a replacement character in the object
+	 * Parameters:
+	 * - target: The character that should be replaced
+	 * - replacement: The character to replace the target chars with
+	 * Preconditions: N/A
+	 * Postconditions: Returns a new MyString object in which all occurrences of target are replaced with replacement
+	 * Exceptions: N/A
+	 */
 	public MyString replace(char target, char replacement) {
 		char[] newCharArray = this.text.clone();
 		for (int i = 0; i < newCharArray.length; i++) {
