@@ -1,3 +1,4 @@
+package Lab6;
 /*
  * Name: Camden Link
  * Assignment: Lab 6
