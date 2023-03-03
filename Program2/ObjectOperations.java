@@ -1,10 +1,40 @@
+package Program2;
+/*
+ * Name: Camden Link
+ * Assignment: Program 2
+ * Lab Instructor: Jakob Kaivo
+ * Date: 2023-03-02
+ * Purpose: This file contains the ObjectOperations class
+ */
+
 import java.util.Scanner;
 import java.util.Arrays;
 
+/*
+ * Class Name: ObjectOperations
+ * Purpose: This class is responsible for reading a shapes data .txt file, drawing, and printing each shape to the StdDraw canvas.
+ * Exceptions: N/A
+ */
 public class ObjectOperations {
 	private static GraphicObject[] array;
 	private static int currentSize;
 	
+	/*
+	 * Method Name: fillArray
+	 * Purpose: Fills the static internal array of this object with GraphicObject instances which can be drawn and printed
+	 * Parameters:
+	 * - filename: Scanner object that has loaded a .txt file containing the data for a list of shapes
+	 * Preconditions:
+	 * - Shapes data .txt file requirements: 
+	 * 		- First line is the number of shapes
+	 * 		- Attributes of a shape should be seperated with a single space
+	 * 		- The type of shape comes first, then the x & y coords, followed by the r, g, b integers of the color
+	 * 		- The final attributes in each line are dependent on which shape is being drawn
+	 * 		- Example to load Rectangle obj: "R 800 320 0 128 128 100 150"
+	 * Postconditions: The internal static array will be filled with GraphicObject instances that have been loaded from 
+	 * 		the shapes data .txt file
+	 * Exceptions: N/A
+	 */
 	public static GraphicObject[] fillArray(Scanner filename) {
 		///Get the number of shapes and init the array with that count
 		int numberOfShapes = Integer.parseInt(filename.nextLine());
@@ -62,12 +92,30 @@ public class ObjectOperations {
 		return array;
 	}
 	
+	/*
+	 * Method Name: drawList
+	 * Purpose: Calls the draw() method on each GraphicObject currently stored in the given array
+	 * Parameters:
+	 * - objectList: GraphicObject[] array of GraphicObjects to draw
+	 * Preconditions: N/A
+	 * Postconditions: Draws each object in the given array to the StdDraw canvas
+	 * Exceptions: N/A
+	 */
 	public static void drawList(GraphicObject[] objectList) {
 		for (int i = 0; i < objectList.length; i++) {
 			objectList[i].draw();
 		}
 	}
 	
+	/*
+	 * Method Name: printList
+	 * Purpose: Prints the results of the toString() method in each GraphicObject in the given array
+	 * Parameters:
+	 * - objectList: GraphicObject[] array of GraphicObjects to print
+	 * Preconditions: N/A
+	 * Postconditions: Prints a description (using GraphicObject.toString()) of each object in the given array
+	 * Exceptions: N/A
+	 */
 	public static void printList(GraphicObject[] objectList) 
 	{
 		for (int i = 0; i < objectList.length; i++) {

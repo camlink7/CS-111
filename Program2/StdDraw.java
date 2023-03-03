@@ -1,3 +1,4 @@
+package Program2;
 /******************************************************************************
  *  Compilation:  javac StdDraw.java
  *  Execution:    java StdDraw
