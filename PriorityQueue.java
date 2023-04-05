@@ -1,4 +1,6 @@
 public class PriorityQueue {
+	int currentSize = 0;
+	
 	public PriorityQueue() {
 	}
 
@@ -13,7 +15,7 @@ public class PriorityQueue {
 	}
 
 	public boolean isEmpty() {
-		return false;
+		return currentSize == 0;
 	}
 	
 	
