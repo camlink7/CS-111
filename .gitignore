@@ -1,6 +1,7 @@
 /Refresher.class
 /RefresherTest.class
 /MyString.class
+<<<<<<< HEAD
 /Stack.class
 /StackInterface.class
 /StackException.class
@@ -8,3 +9,20 @@
 /QueueInterface.class
 /Queue.class
 /QueueException.class
+=======
+/Calculator.class
+/StdDraw$RetinaImageIcon.class
+/StdDraw.class
+/GraphicObject.class
+/Circle.class
+/ObjectOperations.class
+/Tester.class
+/Rectangle.class
+/Square.class
+/Ellipse.class
+/Deque.class
+/PriorityQueue$Node.class
+/PriorityQueue.class
+/Process.class
+/Simulator.class
+>>>>>>> branch 'main' of https://github.com/camlink7/CS-111.git
