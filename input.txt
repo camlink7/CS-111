@@ -1,0 +1,7 @@
+ProcA 10
+ProcB 3
+ProcC 12
+ProcD 5
+ProcE 14
+ProcF 7
+ProcG 10
