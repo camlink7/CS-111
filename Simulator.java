@@ -97,9 +97,9 @@ public class Simulator {
 		String filename = in.nextLine();
 		in.close();
 		
-		//PriorityQueue fifo = enqueueProcesses(filename, false);
-		//simulate(fifo);
-//
+		PriorityQueue fifo = enqueueProcesses(filename, false);
+		simulate(fifo);
+
 		PriorityQueue priority = enqueueProcesses(filename, true);
 		simulate(priority);
 	}
