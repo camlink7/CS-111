@@ -10,7 +10,6 @@ public class PriorityQueue {
 	}
 
 	public void priorityEnqueue(Process proc) {
-		Node nodeBeforeInsert = this.head;
 		Node newNode = new Node(proc);
 		
 		//Just insert if there are no other nodes
