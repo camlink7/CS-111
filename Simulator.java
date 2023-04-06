@@ -1,6 +1,14 @@
+/*
+ * Name: Camden Link
+ * Assignment: Program 3
+ * Lab Instructor: Jakob Kaivo
+ * Date: 2023-04-05
+ * Purpose: This file contains the Simulator, which simulates a CPU running different processes as outlined in 
+ * 	program 3
+ */
+
 import java.util.Scanner;
 import java.io.File;
-import java.io.FileNotFoundException;
 
 public class Simulator {
 	public static final int MS_PER_MINUTE = 60000;

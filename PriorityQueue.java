@@ -1,14 +1,49 @@
+/*
+ * Name: Camden Link
+ * Assignment: Program 3
+ * Lab Instructor: Jakob Kaivo
+ * Date: 2023-04-06
+ * Purpose: This file contains the PriorityQueue as outlined in Program 3
+ */
+
+/*
+ * Class Name: PriorityQueue
+ * Purpose: This class is a Queue data structure for Process objects that also allows for sorting the queue based on 
+ *		the burstTime of the Processes (low to high)
+ * Exceptions: N/A
+ */
 public class PriorityQueue {
 	private int currentSize;
 	private Node head;
 	private Node tail;
 	
+	/*
+	 * Method Name: PriorityQueue
+	 * Purpose: Constructs a new PriorityQueue object with no elements
+	 * Parameters: N/A
+	 * Preconditions: N/A
+	 * Postconditions: Constructs an empty PriorityQueue object
+	 * Exceptions: N/A
+	 */
 	public PriorityQueue() {
 		this.currentSize = 0;
 		this.head = null;
 		this.tail = null;
 	}
 
+	
+	//TODO: FINISH THIS
+	/*
+	 * Method Name: priorityEnqueue
+	 * Purpose: Adds a new Process to the queue based on the burstTime of the new object. The lower the burstTime, the more towards the
+	 * 		front of the Queue the process is placed
+	 * Parameters:
+	 * - proc: The process to be added to the queue
+	 * Preconditions:
+	 * - proc should be a properly initialized Process object
+	 * Postconditions: Constructs a new Process object with the given parameter
+	 * Exceptions: N/A
+	 */
 	public void priorityEnqueue(Process proc) {
 		Node newNode = new Node(proc);
 		
