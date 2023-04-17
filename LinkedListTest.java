@@ -11,6 +11,7 @@ class LinkedListTest<E> extends LinkedList<E> {
 	@Test
 	void testInsertBefore() {
 		LinkedList<Integer> list = new LinkedList<Integer>();
+		
 		for (Integer i : INTEGERS) {
 			list.insertBefore(0, i);
 			assertEquals(i, list.getValue(0));
@@ -62,6 +63,15 @@ class LinkedListTest<E> extends LinkedList<E> {
 		assertEquals(last, list.remove(0));
 		int endVal = list.getValue(INTEGERS.length - 2);
 		assertEquals(endVal, list.remove(INTEGERS.length - 2));
+		
+		
+		LinkedList<Integer> list2 = new LinkedList<Integer>();
+		list2.insertBefore(0, 1);
+		list2.insertBefore(0, 2);
+		list2.insertBefore(0, 3);
+		assertEquals(list2.remove(1), 2);
+		assertEquals(list2.getValue(1), 1);
+		assertEquals(list2.getValue(0), 3);
 		
 	}
 	
