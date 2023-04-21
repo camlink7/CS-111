@@ -33,19 +33,22 @@ class LinkedListTest<E> extends LinkedList<E> {
 	@Test
 	void testInsertAfter() {
 		LinkedList<Integer> list = new LinkedList<Integer>();
+		list.insertAfter(0, 10);
+		list.insertAfter(0, 16);
+		list.insertAfter(0, 99);
 		for (Integer i : INTEGERS) {
 			list.insertAfter(0, i);
-			assertEquals(i, list.getValue(0));
+			assertEquals(i, list.getValue(1));
 		}
 		
 		
-//		for (Integer i : INTEGERS) {
-//			list.insertAfter(2, i);
-//			assertEquals(i, list.getValue(3));
-//		}
+		for (Integer i : INTEGERS) {
+			list.insertAfter(2, i);
+			assertEquals(i, list.getValue(3));
+		}
 		
 		try {
-			list.insertAfter(INTEGERS.length, 5);
+			list.insertAfter(999999, 5);
 		}
 		catch (IndexOutOfBoundsException e){
 			//Pass test silently
@@ -97,14 +100,15 @@ class LinkedListTest<E> extends LinkedList<E> {
 	@Test
 	void testIndexOf() {
 		LinkedList<Integer> list = new LinkedList<Integer>();
-		for (Integer i : INTEGERS) {
-			list.insertAfter(0, i);
-		}
-		assertEquals(0, list.indexOf(INTEGERS[0]));
-		assertEquals(2, list.indexOf(INTEGERS[2]));
-		assertEquals(INTEGERS.length - 1, list.indexOf(INTEGERS[INTEGERS.length - 1]));
+		list.insertBefore(0, 2);
+		list.insertBefore(0, 3);
+		list.insertBefore(0, 1);
 		
-		assertEquals(-1, list.indexOf(excludedValue));
+		assertEquals(list.indexOf(1), 0);
+		assertEquals(list.indexOf(3), 1);
+		assertEquals(list.indexOf(2), 2);
+		
+		assertEquals(list.indexOf(50), -1);
 	}
 	
 	@Test
