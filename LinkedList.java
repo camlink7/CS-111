@@ -10,7 +10,7 @@ public class LinkedList<E> {
 	}
 
 	public void insertBefore(int index, E value) {
-		if (index >= this.currentSize || index < 0) { throw new IndexOutOfBoundsException("Index out of range!"); }
+		if ((index >= this.currentSize || index < 0) && index != 0) { throw new IndexOutOfBoundsException("Index out of range!"); }
 		
 		Node<E> newNode = new Node<E>(value);
 		//Insert at the very beginning
@@ -28,9 +28,9 @@ public class LinkedList<E> {
 		//Inserting in the middle of the list
 		else {
 			Node<E> beforeNode = findNode(index);
-			System.out.println(beforeNode);
 			newNode.next = beforeNode;
 			newNode.prev = beforeNode.prev;
+			beforeNode.prev.next = newNode;
 			beforeNode.prev = newNode;
 		}
 		
@@ -38,21 +38,22 @@ public class LinkedList<E> {
 	}
 
 	public void insertAfter(int index, E value) {
-		if (index >= this.currentSize || index < 0) { throw new IndexOutOfBoundsException("Index out of range!"); }
+		if ((index >= this.currentSize || index < 0) && index != 0) { throw new IndexOutOfBoundsException("Index out of range!"); }
 		
-		Node<E> newNode = new Node<E>(value);
+		Node<E>  = new Node<E>(value);
 		if (index == 0) {
 			if (this.size() >= 1) {
-				newNode.prev = this.head;
-				newNode.next = this.head.next;
-				this.head.next = newNode;
+				
 			}
 			else {
 				this.head = newNode;
 			}
 		}
 		else {
-			
+			Node<E> targetNode = this.findNode(index);
+			newNode.next = targetNode.next;
+			targetNode.next.prev = newNode;
+			targetNode.next = newNode;
 		}
 		
 		this.currentSize++;
@@ -93,6 +94,13 @@ public class LinkedList<E> {
 	}
 
 	public int indexOf(E value) {
+		int count = 0;
+		for (Node<E> elem = this.head; elem != null; elem = elem.next) {
+			if (elem.item.equals(value)) {
+				return count;
+			}
+			count++;
+		}
 		return -1;
 	}
 
